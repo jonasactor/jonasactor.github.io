@@ -27,7 +27,7 @@
 				<header>
 					<span class="image avatar"><img src="images/self_cropped.jpg" alt="" /></span>
 					<h1 id="logo"><a href="index.html">Jonas A. Actor</a></h1>
-					<p> Ph.D. Student, Rice University<br />
+					<p> Ph.D. Candidate, Rice University<br />
 				</p>
 
 				</header>
@@ -54,12 +54,13 @@
 								<div class="container">
 									<header class="major">
 										<h2>Jonas A. Actor</h2>
-										<p>Ph.D. Student, Rice University </p>
+										<p>Ph.D. Candidate, Rice University </p>
 									</header>
-									<p>I am currently a Ph.D. student in the Department of Computational and Applied Mathematics (CAAM) at Rice University in Houston, Texas. My current research, with Dr. Beatrice Riviere (CAAM) and Dr. David Fuentes (MD Anderson), focuses on automated detection and measurement of liver cancer from medical imaging data. For these tasks, I am developing novel image segmentation techniques that combine partial differential equations and neural networks.</p>
+									<p>I am currently a Ph.D. candidate in the Department of Computational and Applied Mathematics (CAAM) at Rice University in Houston, Texas. My current research, with Dr. Beatrice Riviere (CAAM) and Dr. David Fuentes (MD Anderson), focuses on automated detection and measurement of liver cancer from medical imaging data. For these tasks, I am developing novel image segmentation techniques that combine partial differential equations and neural networks.</p>
 									<p>I am a predoctoral fellow of the Gulf Coast Consortia, as part of the Keck Center's <a href="http://www.gulfcoastconsortia.org/home/training/bmi-nlm/">National Library of Medicine Training Grant</a> in Biomedical Informatics and Data Science. </p>
-									<p>In addition to my studies, I serve as a Graduate Writing Consultant at the <a href="https://capc.rice.edu/">Center for Academic and Professional Communication </a>. In this position, I advise undergraduate and graduate students on their academic writing and presentations. I have also served two years on the <a href="https://www.caam.rice.edu/~siamchapter/">Rice University SIAM Student Chapter</a> executive board, first as secretary and more recently as president. </p>
-									<p>My CV contains more information about me and my research background. I can be reached at <a href="mailto:jonasactor@rice.edu">jonasactor@rice.edu</a>.   &emsp;<a href="files/CV-JonasActor-July20.pdf" class="button alt icon fa-file-pdf">CV</a></p>
+									<p>In addition to my studies, I serve as a Graduate Writing Consultant at the <a href="https://capc.rice.edu/">Center for Academic and Professional Communication </a>. In this position, I advise undergraduate and graduate students on their academic writing and presentations. I have also served two years on the <a href="https://www.caam.rice.edu/~siamchapter/">Rice University SIAM Student Chapter</a> executive board, first as secretary and more recently as president, and also on the CAAM department's graduate student advisory board. </p>
+									<p><Strong>I am currently looking for academic positions, for start in summer or fall 2021.</Strong> </p>
+									<p>My CV contains more information about me and my research background. I can be reached at <a href="mailto:jonasactor@rice.edu">jonasactor@rice.edu</a>.   &emsp;<a href="files/CV-JonasActor-Oct20.pdf" class="button alt icon fa-file-pdf">CV</a></p>
 
 
 										<div class="row">
@@ -112,23 +113,32 @@
 								<div class="container">
 									<h3>Research Interests</h3>
 									<ul class="fa-ul">
+										<li><span class="fa-li"><i class="fas fa-flask"></i></span>Scientific machine learning</li>
 										<li><span class="fa-li"><i class="fas fa-plus"></i></span>Functional analysis for neural networks</li>
 										<li><span class="fa-li"><i class="fab fa-react"></i></span>Numerical methods for PDE's</li>
 										<li><span class="fa-li"><i class="fas fa-camera"></i></span>Image segmentation</li>
 										<li><span class="fa-li"><i class="fas fa-dna"></i></span>Biomedical informatics</li>
-                                        <li><span class="fa-li"><i class="fas fa-braille"></i></span>Nonlinear approximation theory</li>
-										<li><span class="fa-li"><i class="fas fa-equals"></i></span>Matrix factorization and numerical linear algebra</li>
+                    <li><span class="fa-li"><i class="fas fa-braille"></i></span>Nonlinear approximation theory</li>
+										<li><span class="fa-li"><i class="fas fa-equals"></i></span>Matrix factorization and numerical (multi)linear algebra</li>
 									</ul>
 
-									<h3>Current and Previous Research Topics</h3>
-
-                                    <h4>Differential Equations and Machine Learning for Image Segmentation</h4>
+									<h3>Current Research Topics</h3>
+                  <h4>Differential Equations and Machine Learning for Image Segmentation</h4>
 									<p>
-                                    Medical image segmentation is a difficult outstanding task; while classically done using variational methods using partial differential equations, recent advances in machine learning and neural networks have been able to achieve significant improvements in accuracy. My research explores ways to improve deep learning methods for medical image segmentation by exploiting similarities between convolutional neural networks and numerical discretizations for solving partial differential equations.
-                                    </p>
+                  Image segmentation is a difficult outstanding task; while classically done using variational methods using partial differential equations, recent advances in machine learning and neural networks have been able to achieve significant improvements in accuracy. My research explores ways to improve deep learning methods for medical image segmentation by exploiting similarities between convolutional neural networks and numerical discretizations for solving partial differential equations.
+									</p><p>
+									Specifically, two common techniques for image segmentation, level set methods and convolutional neural networks (CNN), rely on alternating convolutions with nonlinearities to describe image features: neural networks with mean-zero convolution kernels can be viewed as upwind finite difference discretizations of differential equations. Such a comparison provides a well-established framework for proving properties of CNNs, such as stability and approximation accuracy. Using this comparison, I construct a level set network, a CNN whose structure is determined by an upwind discretization of the level set equation, so that by construction, each layer of the network becomes a timestep in our discretization. In this sense, forward propagation through the CNN is equivalent to solving the level set equation. The level set network achieves comparable segmentation accuracy to solving the level set equation, while requiring substantially fewer parameters than conventional CNN architectures.
+
+                  </p>
 									<p> With Dr. Beatrice Riviere, Rice University, and Dr. David Fuentes, MD Anderson Cancer Center. <br> </p>
 
+									<h4>Stable Medical Image Segmentation in the Presence of Noise</h4>
+									<p>
+										Over the last decade, deep learning for medical imaging has rapidly become a valuable tool to gather quantitative data in devising better treatments and in improving clinical care. Despite many high-profile successes, there are concerns about the viability of deep learning methods, since many promising results on specific datasets have not been replicable, due to subtle differences in image properties such as noise or image acquisition parameters. In this sense, deep learning methods are unstable: small noise in input can cause drastically different segmentation results. As a result of this instability, deep learning segmentation methods are viewed as “brittle black boxes”, raising questions of reliability and clinical liability. My work address these concerns by improving the stability of deep learning methods. To do so, we propose a novel method that incorporates into the training process a notion of how much each convolution layer can be distorted due to noise. In this approach, Holder’s Inequality bounds the spectral norm of the convolution linear operators, as this norm measures the possible distortion at each layer. Our bound applies to a broader class of convolutions than previous methods, is fast to compute, and requires no additional implementation beyond the tools available in current deep learning toolkits. This bound is incorporated as a regularization term in training as part of this method. We evaluate the effectiveness of our method on models for liver segmentation from CT image data, and we demonstrate that our method helps to stabilize segmentation output in the presence of noise.
+									</p>
+									<p> With Dr. Beatrice Riviere, Rice University, and Dr. David Fuentes, MD Anderson Cancer Center. <br> </p>
 
+									<h3>Previous Research Topics</h3>
 									<h4>Kolmogorov Superposition Theorem</h4>
 									<p>The Kolmogorov Superposition Theorem (KST) states that any multivariate continuous function can be represented using a small number of superpositions of continuous univariate functions. Specifically, for every continuous function $\,f: [0,1]^n \rightarrow \mathbb{R}$, there exists univariate functions $\,\chi: \mathbb{R} \rightarrow \mathbb{R}$ and $\,\psi_{p,q}: [0,1] \rightarrow \mathbb{R}$ such that $$f(x_1,\dots,x_n) = \sum_{q=0}^{2n} \chi \left( \sum_{p=1}^n \psi_{p,q}(x_p) \right).$$
 									In this representation, the functions $\,\psi_{p,q}$ do not depend on the function $\,f$ in question. Therefore, we can associate $\,f$ with its corresponding univariate function $\,\chi$, i.e. the function that enables representation via KST. Using this theorem, we effectively trade the number of variables for smoothness: the functions $\,\psi$ and $\,\chi$ are inherently nonsmooth. My research explores how to computationally represent multivariate functions using KST while maintaining the best possible smoothness of these functions.
@@ -150,7 +160,7 @@
 								<div class="container">
 
 								<h3>Publications and Presentations</h3>
-								<p>Here are materials from recent (and not-so-recent) research I have done. Please see my CV for a full list of publications and presentations.</p> <p><a href="files/CV-JonasActor-July20.pdf" class="button alt icon fa-file-pdf">CV</a></p>
+								<p>Here are materials from recent (and not-so-recent) research I have done. Please see my CV for a full list of publications and presentations.</p> <p><a href="files/CV-JonasActor-Oct20.pdf" class="button alt icon fa-file-pdf">CV</a></p>
 
 											<div class="table-wrapper">
 												<table>
@@ -160,8 +170,38 @@
 															<th><h4>Publications</h4></th>
 														</tr>
 													</thead>
+
 													<tbody>
-                            <tr>
+														<tr>
+															<td></td>
+															<td><strong> Fully Implicit DG Formulations for Time-Dependent Coupled Darcy - Navier-Stokes Equations </strong><br>
+																Actor, J.A. and B. Riviere. </br>
+																In preparation, December 2020. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><strong> Depthwise Convolution Factorization for Network Compression </strong><br>
+																Actor, J.A., S. Escobar, and B. Riviere. </br>
+																In preparation, November 2020. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><strong> Effects of CT Scanner Type on Deep Learning Segmentation Algorithms </strong><br>
+																Actor, J.A., B. Riviere, K. Elsayes, and D. Fuentes. </br>
+																Submitted, IEEE Internationa Symposium of Biomedical Imaging 2021. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><strong> Bridging the Gaps: Adapting a Deep Learning Module for a Mixed Audience </strong><br>
+																Actor, J.A. and R. Myers </br>
+																Submitted, ACM TOCE, June 2020. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><strong>  Robust Regularized Neural Networks in the Presence of Noise </strong><br>
+																In revision, Med Im Analysis, March 2020. </td>
+														</tr>
+													  <tr>
 															<td>
 																<ul class="actions vertical small">
                                 <li><a href="files/Papers/SPIE-MI20-Manuscript.pdf" class="button alt small icon fa-file-pdf">PDF</a></li>
@@ -219,33 +259,6 @@
 												</table>
 											</div>
 
-                                            <div class="table-wrapper">
-												<table>
-													<thead>
-														<tr>
-															<th><h4></h4></th>
-															<th><h4>Submitted and Accepted Work</h4></th>
-														</tr>
-													</thead>
-													<tbody>
-														<tr>
-															<td></td>
-															<td><strong> Bridging the Gaps: Adapting a Deep Learning Module for a Mixed Audience </strong><br>
-																Submitted, ACM TOCE, June 2020. </td>
-														</tr>
-														<tr>
-															<td></td>
-															<td><strong>  Robust Regularized Neural Networks in the Presence of Noise </strong><br>
-																Submitted, Med Im Analysis, March 2020. </td>
-														</tr>
-													</tbody>
-                                                    <tfoot>
-                                                        <tr>
-                                                            <td colspan="2"></td>
-                                                        </tr>
-                                                    </tfoot>
-                                                </table>
-                                            </div>
 
 
 											<div class="table-wrapper">
@@ -257,6 +270,16 @@
 														</tr>
 													</thead>
 													<tbody>
+														<tr>
+															<td></td>
+															<td><strong> Lipschitz Regularization of Convolution Operators for Stable Image Segmentation </strong><br>
+																Contributed Talk, SIAM Computational Science and Engineering 2021. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><strong> Upwind Schemes and Neural Networks for Image Segmentation </strong><br>
+															  Minisymposium Talk, SIAM TX-LA Meeting, October 2020. </td>
+														</tr>
 														<tr>
 															<td><a href="files/Presentations/Talk_NLM20.pdf" class="button alt small icon fa-file-pdf">PDF</a></td>
 															<td><strong> Stabilized Image Segmentation in the Presence of Noise </strong><br>
@@ -315,8 +338,25 @@
 													</thead>
 													<tbody>
 														<tr>
+															<td></td>
+															<td><strong> Introduction to Determinantal Point Processes </strong><br>
+																Presentation, CAAM Graduate Seminar, November 2020 </td>
+														</tr>
+
+														<tr>
+															<td></td>
+															<td><strong> Nonnegative Matrix Factorization </strong><br>
+																Chalk Talk, Rice SIAM Journal Club, October 2020. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<td><strong> Models for  Medical Image Segmentation </strong><br>
+																Presentation, CAAM Graduate Seminar, September 2020. </td>
+														</tr>
+
+														<tr>
 															<td><a href="files/Presentations/CAAM_GradRecruiting.pdf" class="button alt small icon fa-file-pdf">PDF</a></td>
-															<td><strong> Medical Image Segmentation </strong><br>
+															<td><strong>  Medical Image Segmentation </strong><br>
 																Lightning Talk, CAAM Graduate Recruitment Weekend, February 2020. </td>
 														</tr>
 														<tr>
@@ -375,6 +415,20 @@
 														<tr>
 															<td></td>
 															<!-- <td><a href="files/Presentations/RDSC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td> -->
+															<td><strong>Stabilized Image Segmentation in the Presence of Noise </strong><br>
+															Gulf Coast Consortia Keck Annual Research Conference, October 2020 (poster as slides). </td>
+														</tr>
+														<tr>
+															<td></td>
+															<!-- <td><a href="files/Presentations/RDSC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td> -->
+															<td><strong> Effects of Convolution Dimension for Medical Image Segmentation </strong><br>
+																With S. Escobar </br>
+																SIAM TX-LA Sectional Meeting 2020, October 2020. </td>
+														</tr>
+
+														<tr>
+															<td></td>
+															<!-- <td><a href="files/Presentations/RDSC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td> -->
 															<td><strong> Spectral Norms of Convolution Kernels for Medical Image Segmentation </strong><br>
 																Contributed Talk / Poster, SIAM Imaging Sciences 2020 (Virtual), July 2020. </td>
 														</tr>
@@ -394,9 +448,23 @@
 																Gulf Coast Consortia Keck Annual Research Confernece, October 2019.</td>
 														</tr>
 														<tr>
+															<td></td>
+															<!-- <td><a href="files/Presentations/RDSC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td> -->
+															<td><strong> Opening the Black Box of a Convolutional Neural Network Used for Brain Tumor Segmentation </strong><br>
+																With E. McCollum </br>
+																CPRIT CURE Summer Undergraduate Research Program, 2019. </td>
+														</tr>
+
+														<tr>
 															<td><a href="files/Presentations/Poster_OGHPC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td>
 															<td><strong> A Comparison of Image Segmentation Methods </strong><br>
 																Rice Oil and Gas HPC Conference, Ken Kennedy Institue for Information Technology, March 2019. <br> Gene Golub SIAM Summer School, June 2019. </td>
+														</tr>
+														<tr>
+															<td></td>
+															<!-- <td><a href="files/Presentations/RDSC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td> -->
+															<td><strong> Liver Segmentation via Unrolled Mumford-Shah Neural Network </strong><br>
+																Gulf Coast Consortia Keck Annual Research Conference, October 2018. </td>
 														</tr>
 														<tr>
 															<td><a href="files/Presentations/Poster_HSS.pdf" class="button alt small icon fa-file-pdf">PDF</a></td>
@@ -408,6 +476,13 @@
 															<td><strong>Kolmogorov Superposition Theorem: Univariate Encodings for Multivariate Functions </strong><br>
 																 Rice Data Science Conference, Ken Kennedy Institute for Information Technology, October 2017. </td>
 														</tr>
+														<tr>
+															<td></td>
+															<!-- <td><a href="files/Presentations/RDSC19.pdf" class="button alt small icon fa-file-pdf">PDF</a></td> -->
+															<td><strong> Modeling $CaCO_3$ Fouling in Heat Exchangers </strong><br>
+																Advances in Mathematics of Finite Elements Conference, 2016. </td>
+														</tr>
+
 														<tr>
 															<td><a href="files/Presentations/Poster_TBVis.pdf" class="button alt small icon fa-file-pdf">PDF</a></td>
 															<td><strong>Serial Block Face SEM Visualization of Tuberculosis Infected Macrophages </strong><br>
@@ -499,7 +574,7 @@
 					<section id="footer">
 						<div class="container">
 							<ul class="copyright">
-								<li>Last updated: March 2020.</li><li>&copy; Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>Last updated: November 2020.</li><li>&copy; Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</section>
